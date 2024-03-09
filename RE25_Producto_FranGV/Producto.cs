@@ -30,8 +30,6 @@
 
         // PROPIEDADES
 
-
-
         public string Nombre
         {
             get
@@ -72,6 +70,35 @@
             }
         }
 
+        // precios
+
+        public float PrecioProducto
+        {
+            get
+            {
+                return precioProducto();
+            }
+        }
+
+        public float PrecioIva
+        {
+            get
+            {
+                // solo lectura
+                return precioIva();
+            }
+        }
+
+        public float PrecioIVAProducto
+        {
+            get
+            {
+                return precioIVAProducto();
+            }
+        }
+
+
+
         // MÉTODOS
 
         public virtual string ToString()
@@ -80,18 +107,30 @@
 
             cadena = $"{Nombre}\n";
             cadena += $"{PrecioBase}\n";
-            cadena += $"{PrecioIva()}\n";
+            cadena += $"{precioIva}\n";
 
             return cadena;
-
-
         }
 
+
+        // PRECIOS
+
+        private float precioIVAProducto()
+        {
+            return PrecioIva / Cantidad;
+        }
+
+        private float precioProducto()
+        {
+            return PrecioBase / Cantidad;
+        }
+
+
         // ABSTRACTO
-        protected abstract float PrecioIva();
+        protected abstract float precioIva();
         
         // VALIDACIÓN
-        private string ValidarNombre(string cadena)
+        protected string ValidarNombre(string cadena)
         {
             // remover espacios de antes y despues
             cadena = cadena.ToLower().Trim();
@@ -118,7 +157,7 @@
 
     public class TextoIncorrectoException : Exception
     {
-        public TextoIncorrectoException() : base("Formatoo de tecto incorrecto") { }
+        public TextoIncorrectoException() : base("Formato de tecto incorrecto") { }
         public TextoIncorrectoException(string mensaje) : base(mensaje) { }
     }
 

@@ -3,16 +3,44 @@
   <Class Name="RE25_Producto_FranGV.Producto">
     <Position X="0.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAEAAAAAABAUAACAggAAAgAAAAQBAAAAAAIAAAA=</HashCode>
+      <HashCode>EAAAgAEAAAAAABAUEACAggAAAgAAAASBAAAAAgIAAAA=</HashCode>
       <FileName>Producto.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RE25_Producto_FranGV.TextoIncorrectoException" Collapsed="true">
-    <Position X="3.5" Y="2.25" Width="1.5" />
+  <Class Name="RE25_Producto_FranGV.TextoIncorrectoException">
+    <Position X="7.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Producto.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="RE25_Producto_FranGV.Bebida">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACAACAAABAQAAAAAAAAAgAAgBA=</HashCode>
+      <FileName>Bebida.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RE25_Producto_FranGV.Carne">
+    <Position X="3.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAEAAAAACAAABAAAAAAAAAAAgAAQFA=</HashCode>
+      <FileName>Carne.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RE25_Producto_FranGV.TipoUnidadErrorException">
+    <Position X="7.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Carne.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="RE25_Producto_FranGV.TipoUnidad">
+    <Position X="6.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAQA=</HashCode>
+      <FileName>Bebida.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
