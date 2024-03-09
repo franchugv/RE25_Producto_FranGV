@@ -130,7 +130,7 @@
         protected abstract float precioIva();
         
         // VALIDACIÓN
-        protected string ValidarNombre(string cadena)
+        protected static string ValidarNombre(string cadena)
         {
             // remover espacios de antes y despues
             cadena = cadena.ToLower().Trim();

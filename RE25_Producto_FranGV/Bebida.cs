@@ -53,6 +53,7 @@ namespace RE25_Producto_FranGV
             set
             {
                 _denominacionOrigen = value;
+               
             }
         }
 
