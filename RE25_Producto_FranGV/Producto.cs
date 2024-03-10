@@ -40,7 +40,7 @@
             {
                 // Pasar a minuscula
                 // Validación
-                value = ValidarNombre(value);
+                value = ValidarCadena(value);
                 _nombre = value;
             }
         }
@@ -107,7 +107,7 @@
 
             cadena = $"{Nombre}\n";
             cadena += $"{PrecioBase}\n";
-            cadena += $"{precioIva}\n";
+            cadena += $"{PrecioIva}\n";
 
             return cadena;
         }
@@ -130,7 +130,7 @@
         protected abstract float precioIva();
         
         // VALIDACIÓN
-        protected static string ValidarNombre(string cadena)
+        protected static string ValidarCadena(string cadena)
         {
             // remover espacios de antes y despues
             cadena = cadena.ToLower().Trim();

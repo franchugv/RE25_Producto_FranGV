@@ -50,7 +50,8 @@ namespace RE25_Producto_FranGV
             }
             set
             {
-                _parteAnimal = value;
+                _parteAnimal = ValidarCadena(value);
+                //_parteAnimal = value;
             }
         }
 

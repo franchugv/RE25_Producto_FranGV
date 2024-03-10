@@ -52,6 +52,7 @@ namespace RE25_Producto_FranGV
             }
             set
             {
+                //_denominacionOrigen = ValidarCadena(value);
                 _denominacionOrigen = value;
                
             }
