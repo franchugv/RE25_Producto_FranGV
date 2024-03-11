@@ -40,7 +40,7 @@
             {
                 // Pasar a minuscula
                 // Validación
-                value = ValidarCadena(value);
+                value = ValidarNombre(value);
                 _nombre = value;
             }
         }
@@ -131,7 +131,7 @@
         
 
         // VALIDACIÓN
-        protected static string ValidarCadena(string cadena)
+        protected static string ValidarNombre(string cadena)
         {
             // remover espacios de antes y despues
             cadena = cadena.ToLower().Trim();
@@ -139,8 +139,31 @@
             // validación
             if (string.IsNullOrEmpty(cadena)) throw new CadenaVaciaException();
 
-            if (!cadena.All(char.IsAsciiLetterOrDigit)) throw new TextoIncorrectoException();
-            
+
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsLetterOrDigit(caracter) || char.IsWhiteSpace(caracter)))
+                    throw new TextoIncorrectoException();
+            }
+
+            return cadena;
+        }
+
+        protected static string ValidarCadena(string cadena)
+        {
+            cadena = cadena.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(cadena)) throw new CadenaVaciaException();
+
+            //if (!cadena.All(char.IsAsciiLetter) || cadena.All(char.IsWhiteSpace)) 
+              //  throw new TextoIncorrectoException();
+
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsLetter(caracter) || char.IsWhiteSpace(caracter)))
+                    throw new TextoIncorrectoException();
+            }
+
             return cadena;
         }
 

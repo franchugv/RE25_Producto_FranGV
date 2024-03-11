@@ -12,7 +12,7 @@ namespace Pruebas
             List<Producto> listaProductos = new List<Producto>();
 
 
-            listaProductos.Add(new Carne("Ternera", 20, "lomo"));
+            listaProductos.Add(new Carne("Ternera", 34.50f, "Lomo"));
 
             listaProductos[0].Cantidad = 10;
 
