@@ -76,7 +76,7 @@
         {
             get
             {
-                return precioProducto();
+                return (float)Math.Round(precioProducto(), 2);
             }
         }
 
@@ -85,7 +85,7 @@
             get
             {
                 // solo lectura
-                return precioIva();
+                return (float)Math.Round(precioIva(), 2);
             }
         }
 
@@ -93,7 +93,7 @@
         {
             get
             {
-                return precioIVAProducto();
+                return (float)Math.Round(precioIVAProducto(), 2);
             }
         }
 
@@ -129,6 +129,7 @@
         // ABSTRACTO
         protected abstract float precioIva();
         
+
         // VALIDACIÓN
         protected static string ValidarCadena(string cadena)
         {
@@ -157,7 +158,7 @@
 
     public class TextoIncorrectoException : Exception
     {
-        public TextoIncorrectoException() : base("Formato de tecto incorrecto") { }
+        public TextoIncorrectoException() : base("Formato de texto incorrecto") { }
         public TextoIncorrectoException(string mensaje) : base(mensaje) { }
     }
 

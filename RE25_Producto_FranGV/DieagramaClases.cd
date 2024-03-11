@@ -3,7 +3,7 @@
   <Class Name="RE25_Producto_FranGV.Producto">
     <Position X="0.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAgAEAAAAAABAUEACAggAAAgAAAASBAAAAAgIAAAA=</HashCode>
+      <HashCode>EAgAgAEAAAAAABAEEACAggAAAgAAAASBAAAAAgIAAAA=</HashCode>
       <FileName>Producto.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -36,7 +36,7 @@
     </TypeIdentifier>
   </Class>
   <Enum Name="RE25_Producto_FranGV.TipoUnidad">
-    <Position X="6.25" Y="7" Width="1.5" />
+    <Position X="5.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAQA=</HashCode>
       <FileName>Bebida.cs</FileName>

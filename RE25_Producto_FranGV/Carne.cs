@@ -29,7 +29,6 @@ namespace RE25_Producto_FranGV
             _nombre = "Pollo";
             _parteAnimal = "Filetes Pechuga";
             _tipoUnidad = "Kg";
-            _precioBase = -1;
             _cantidad = 0;
         }
 

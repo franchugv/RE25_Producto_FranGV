@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace RE25_Producto_FranGV
 {
 
-    public enum TipoUnidad :byte {Botella, Caja3, Caja6, Caja12}
+    public enum TipoUnidad : byte {Botella, Caja3, Caja6, Caja12}
 
     public class Bebida : Producto
     {
@@ -29,7 +29,7 @@ namespace RE25_Producto_FranGV
         public Bebida() : base()
         {
             _nombre = NOMBRE_DEFAULT;
-            DenominacionOrigen = DENOMINACION_ORIGEN_DEFAULT;
+            _denominacionOrigen = DENOMINACION_ORIGEN_DEFAULT;
             _tipoUnidad = TipoUnidad.Botella;
             _precioBase = -1;
             _cantidad = 0;
@@ -52,8 +52,8 @@ namespace RE25_Producto_FranGV
             }
             set
             {
-                //_denominacionOrigen = ValidarCadena(value);
-                _denominacionOrigen = value;
+                _denominacionOrigen = ValidarCadena(value);
+                //_denominacionOrigen = value;
                
             }
         }
