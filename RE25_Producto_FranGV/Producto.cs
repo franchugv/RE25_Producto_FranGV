@@ -76,7 +76,7 @@
         {
             get
             {
-                return (float)Math.Round(precioProducto(), 2);
+                return (float)Math.Round(precioProducto(), 3);
             }
         }
 
@@ -85,7 +85,7 @@
             get
             {
                 // solo lectura
-                return (float)Math.Round(precioIva(), 2);
+                return (float)Math.Round(precioIva(), 3);
             }
         }
 
@@ -93,7 +93,7 @@
         {
             get
             {
-                return (float)Math.Round(precioIVAProducto(), 2);
+                return (float)Math.Round(precioIVAProducto(), 3);
             }
         }
 
