@@ -14,7 +14,7 @@ namespace RE25_Producto_FranGV
 
 
         // CONSTANTES
-
+        private const float IVA_BEBIDA = 1.21f;
         private const string NOMBRE_DEFAULT = "Fino Baena";
         private const string DENOMINACION_ORIGEN_DEFAULT = "Montilla Moriles";
 
@@ -31,8 +31,8 @@ namespace RE25_Producto_FranGV
             _nombre = NOMBRE_DEFAULT;
             _denominacionOrigen = DENOMINACION_ORIGEN_DEFAULT;
             _tipoUnidad = TipoUnidad.Botella;
-            _precioBase = -1;
-            _cantidad = 0;
+            // _precioBase = -1; Constructor base
+            // _cantidad = 0; Constructor base
         }
 
         public Bebida(string name, float price, string denominacion) : this()
@@ -43,6 +43,22 @@ namespace RE25_Producto_FranGV
         }
 
         // PROPIEDADES
+
+        public override float Cantidad
+        {
+            
+            get
+            {
+                return _cantidad;
+            }
+            set
+            {
+                base.Cantidad = value;     
+                _cantidad = QuitarDecimales(value);
+            }
+
+        }
+
 
         public string DenominacionOrigen
         {
@@ -71,7 +87,7 @@ namespace RE25_Producto_FranGV
 
         protected override float precioIva()
         {
-            return PrecioBase * 1.21f;
+            return PrecioBase * IVA_BEBIDA;
         }
 
         public override string ToString()
@@ -86,6 +102,14 @@ namespace RE25_Producto_FranGV
             cadena += $"Precio IVA: {PrecioIva} Euros + IVA\n";
 
             return cadena;
+        }
+
+        private float QuitarDecimales(float num)
+        {
+
+            num = (float)Math.Floor(num);
+
+            return num;
         }
     }
 }

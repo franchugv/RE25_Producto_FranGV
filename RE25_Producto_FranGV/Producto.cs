@@ -12,7 +12,7 @@
 
         protected string _nombre;
         protected float _precioBase;
-        protected int _cantidad;
+        protected float _cantidad;
 
         // CONSTRUCTORES
 
@@ -20,9 +20,10 @@
         {
             _nombre = NOMBRE_DAFAULT;
             _precioBase = PRECIO_DEFAULT;
+            _cantidad = 0;
         }
 
-        public Producto(string name, float product)
+        public Producto(string name, float product) :this()
         {
             Nombre = name;
             PrecioBase = product;
@@ -53,12 +54,12 @@
             }
             set
             {
-                ValidarPrecio(value);
+                ValidarNum(value);
                 _precioBase = value;
             }
         }
 
-        public int Cantidad
+        public virtual float Cantidad
         {
             get
             {
@@ -66,12 +67,14 @@
             }
             set
             {
+                ValidarNum(value);
                 _cantidad = value;
             }
         }
 
         // precios
-
+        #region Calcular Precios
+        // Todos redondeados a 3 decimales
         public float PrecioProducto
         {
             get
@@ -96,7 +99,7 @@
                 return (float)Math.Round(precioIVAProducto(), 3);
             }
         }
-
+        #endregion
 
 
         // MÉTODOS
@@ -131,7 +134,8 @@
         
 
         // VALIDACIÓN
-        protected static string ValidarNombre(string cadena)
+        // Permite alfanumericos
+        protected virtual string ValidarNombre(string cadena)
         {
             // remover espacios de antes y despues
             cadena = cadena.ToLower().Trim();
@@ -149,7 +153,8 @@
             return cadena;
         }
 
-        protected static string ValidarCadena(string cadena)
+        // Permite solo letras
+        protected virtual string ValidarCadena(string cadena)
         {
             cadena = cadena.Trim().ToLower();
 
@@ -167,7 +172,7 @@
             return cadena;
         }
 
-        private void ValidarPrecio(float num)
+        protected virtual void ValidarNum(float num)
         {
             // CONSTANTES
             const float PRECIO_MIN = 0;
@@ -178,7 +183,7 @@
     }
 
     // Excepciones personalizadas
-
+    #region Excepciones Personalizadas
     public class TextoIncorrectoException : Exception
     {
         public TextoIncorrectoException() : base("Formato de texto incorrecto") { }
@@ -197,4 +202,5 @@
         public CadenaVaciaException() : base("Error: cadena vacía") { }
         public CadenaVaciaException(string mensaje) : base(mensaje) { }
     }
+    #endregion
 }

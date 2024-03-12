@@ -6,18 +6,26 @@ using System.Threading.Tasks;
 
 namespace RE25_Producto_FranGV
 {
+
+    public enum UnidadCarne : byte { Kilogramos, Bandeja }
+
     public class Carne : Producto
     {
 
         // CONSTANTES
 
-        private const string TIPO_UNIDAD1 = "Kg";
-        private const string TIPO_UNIDAD2 = "Bandeja";
+        private const float IVA_CARNE = 1.1f;
+        private const UnidadCarne UNIDAD_DEF = UnidadCarne.Kilogramos;
+        private const string NOMBRE_DEFAULT = "Pollo"; 
+        private const string PARTE_ANIMAL_DEFAULT = "Filetes Pechuga";
+        private const byte CANTIDAD_DEFAULT = 0;
+
 
         // MIEMBROS
 
         private string _parteAnimal;
-        private string _tipoUnidad;
+        private UnidadCarne _tipoUnidadCarne;
+        protected float _cantidad;
 
 
 
@@ -26,10 +34,10 @@ namespace RE25_Producto_FranGV
 
         public Carne() : base() 
         {
-            _nombre = "Pollo";
-            _parteAnimal = "Filetes Pechuga";
-            _tipoUnidad = "Kg";
-            _cantidad = 0;
+            _nombre = NOMBRE_DEFAULT;
+            _parteAnimal = PARTE_ANIMAL_DEFAULT;
+            _tipoUnidadCarne = UNIDAD_DEF;
+            // _cantidad = CANTIDAD_DEFAULT Constructor base;
         }
 
         public Carne(string name, float price, string parteAnimal) : this()
@@ -40,6 +48,8 @@ namespace RE25_Producto_FranGV
         }
 
         // PROPIEDADES
+
+        
 
         public string ParteAnimal
         {
@@ -54,18 +64,13 @@ namespace RE25_Producto_FranGV
             }
         }
 
-        public string TipoUnidad
+        public UnidadCarne TipoUnidadCarne
         {
             get
             {
-                return _tipoUnidad;
+                return _tipoUnidadCarne;
             }
-            set
-            {
-                // Validarlo
-                ValidarTipoUnidad(value);
-                _tipoUnidad = value;
-            }
+           
         }
 
         // MÉTODOS
@@ -74,7 +79,7 @@ namespace RE25_Producto_FranGV
 
         protected override float precioIva()
         {
-            return PrecioBase * 1.10f;
+            return PrecioBase * IVA_CARNE;
         }
 
         public override string ToString()
@@ -83,9 +88,9 @@ namespace RE25_Producto_FranGV
 
             cadena = $"Nombre: {ParteAnimal}\n";
             cadena += $"Precio Base: {PrecioBase} Euros\n";
-            cadena += $"Precio KG: {PrecioProducto} Euros/{TipoUnidad}\n";
+            cadena += $"Precio KG: {PrecioProducto} Euros/{TipoUnidadCarne}\n";
             cadena += $"Precio + IVA el Kg: {PrecioIVAProducto} Euros/Kg + IVA\n";
-            cadena += $"Cantidad: {Cantidad} {TipoUnidad}\n";
+            cadena += $"Cantidad: {Cantidad} {TipoUnidadCarne}\n";
             cadena += $"Precio IVA: {PrecioIva} Euros + IVA\n";
 
             return cadena;
@@ -93,10 +98,6 @@ namespace RE25_Producto_FranGV
 
         // VALIDACIÓN
 
-        private void ValidarTipoUnidad(string cadena)
-        {
-            if (cadena != TIPO_UNIDAD1 || cadena != TIPO_UNIDAD2) throw new TipoUnidadErrorException();
-        }
 
     }
 

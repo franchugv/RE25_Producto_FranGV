@@ -14,11 +14,11 @@ namespace Pruebas
 
             listaProductos.Add(new Carne("Ternera", 34.50f, "Lomo"));
 
-            listaProductos[0].Cantidad = 10;
+            listaProductos[0].Cantidad = 10.3f;
 
             listaProductos.Add(new Bebida("Vino", 30, "Baena"));
 
-            listaProductos[1].Cantidad = 10;
+            listaProductos[1].Cantidad = 10.3f;
 
 
             Console.WriteLine($"{listaProductos[0].ToString()}\n");
