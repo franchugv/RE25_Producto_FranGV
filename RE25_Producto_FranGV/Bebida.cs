@@ -106,7 +106,7 @@ namespace RE25_Producto_FranGV
 
         private float QuitarDecimales(float num)
         {
-
+            // Quita decimales
             num = (float)Math.Floor(num);
 
             return num;
