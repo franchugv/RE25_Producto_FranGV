@@ -86,7 +86,8 @@ namespace RE25_Producto_FranGV
         {
             string cadena = "";
 
-            cadena = $"Nombre: {ParteAnimal}\n";
+            cadena = $"Nombre: {Nombre}\n";
+            cadena += $"Parte animal: {ParteAnimal}\n";
             cadena += $"Precio Base: {PrecioBase} Euros\n";
             cadena += $"Precio KG: {PrecioProducto} Euros/{TipoUnidadCarne}\n";
             cadena += $"Precio + IVA el Kg: {PrecioIVAProducto} Euros/Kg + IVA\n";
